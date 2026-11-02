@@ -22,6 +22,8 @@ public class GoogleHomePage extends BasePage {
                     + " | //*[@aria-label[contains(translate(., 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'AI MODE')]]"
     );
 
+    private static final By GOOGLE_SEARCH_BUTTON = By.xpath("/html/body/div[2]/div[6]/form/div[1]/div/div[4]/center/input[1]");
+
     @Inject
     public GoogleHomePage(WebDriver driver) {
         super(driver);
@@ -42,5 +44,9 @@ public class GoogleHomePage extends BasePage {
         if (!acceptButtons.isEmpty()) {
             acceptButtons.get(0).click();
         }
+    }
+
+    public boolean isGoogleSearchButtonVisible(){
+        return isAnyDisplayed(AI_MODE_BUTTON);
     }
 }

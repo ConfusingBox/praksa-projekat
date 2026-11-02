@@ -27,4 +27,18 @@ public class GoogleHomeSteps {
                 "Expected Google home page to contain a visible AI Mode button"
         );
     }
+
+    @Then("the Google Search button should be visible")
+    public void theGoogleSearchButtonShouldBeVisible(){
+        int i =2;
+        Assert.assertTrue(
+                googleHomePage.isGoogleSearchButtonVisible(),
+                "Expected Google home page to contain a visible Google Search button"
+        );
+//        Assert.assertTrue(
+//                true,
+//                "TEst123"
+//        );
+
+    }
 }
